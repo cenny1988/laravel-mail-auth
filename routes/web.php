@@ -15,3 +15,4 @@ Route::post('/register', 'Auth\RegisterController@register');
 
 // API Controller
 Route::get('/api/videogames/list', 'ApiController@getVideogames')->name('api.videogames.list');
+Route::get('/api/videogame/delete/{id}', 'ApiController@deleteVideogame')->name('api.videogame.delete');

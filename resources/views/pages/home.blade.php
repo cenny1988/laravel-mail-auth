@@ -11,12 +11,9 @@
         </ul>
     </div>
 @endif
-
-@auth
-    <game-component></game-component>    
-    
-    
-@else
+  
+{{-- Guest login/register --}}
+@guest
     <h3>Login:</h3>
     <form action="{{route('login')}}" method="POST">
         @method('POST')
@@ -49,7 +46,11 @@
             </div>
         </div>
     </form>
-    
-@endauth
+@endguest
+
+{{-- lista videogame in componente vue --}}
+<div class="my-3">
+    <game-component user="{{Auth::check()}}"></game-component>  
+</div>
 
 @endsection
