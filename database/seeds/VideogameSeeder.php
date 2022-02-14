@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Videogame;
 
-class PostSeeder extends Seeder
+class VideogameSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(Videogame::class, 50)->create();
     }
 }
